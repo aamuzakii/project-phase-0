@@ -8,7 +8,7 @@ let login = document.getElementById('submitButton')
 
 login.onclick = () => {
     if (input[0].value === this.sessionStorage.getItem("username") && input[1].value === this.sessionStorage.getItem("password")) {
-        window.open("index.html", "_self")
+        window.open("https://aamuzakii.github.io/project-phase-0/", "_self")
         alert('Login Berhasil')
     } else{
         alert('Username atau Password yang Anda Masukkan Salah')
