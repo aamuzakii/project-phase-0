@@ -11,6 +11,6 @@ login.onclick = () => {
         window.open("https://www.youtube.com/", "_self")
         alert('Login Berhasil')
     } else{
-        alert('Silahkan masukkan username : "coba" dan password "123"')
+        alert('Username atau Password yang Anda Masukkan Salah')
     }
 }
