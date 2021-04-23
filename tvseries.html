@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .webdesigntuts-workshop button {
+            animation: glow 800ms ease-out infinite alternate;
+            background: #222922;
+            background: linear-gradient(#333933, #222922);
+            border-color: white;
+            box-shadow: 0 0 5px rgba(0,255,0,.2), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+            color: blue;
+            outline: none;
+        }
+        .webdesigntuts-workshop:after {
+            background: #000;
+            background: linear-gradient(left, #151515, #000, #151515);	
+            top: 191px;
+        }
+        .webdesigntuts-workshop input::-webkit-input-placeholder {
+            color: #888;
+        }
+
+        .webdesigntuts-workshop input:-moz-placeholder {
+            color: #888;
+        }
+        @keyframes glow {
+            0% {
+                border-color: blue;
+                box-shadow: 0 0 5px rgba(0,0,255), inset 0 0 5px rgba(0,255,0,.1), 0 2px 0 #000;
+            }	
+            100% {
+                border-color: blue;
+                box-shadow: 0 0 20px rgba(255,255,255,.6), inset 0 0 10px rgba(0,255,0,.4), 0 2px 0 #000;
+            }
+        }
+
+    </style>    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">Tenflix</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <!-- <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a> -->
+            <a class="nav-item nav-link" style="margin-left: 20px; margin-right: 20px; font-weight: bold;" href="#">Home</a>
+            <a class="nav-item nav-link" style="margin-left: 20px; margin-right: 20px; font-weight: bold;" href="./catalog.html">Catalog</a>
+            <a class="nav-item nav-link" style="margin-left: 20px; margin-right: 20px; font-weight: bold;" href="./tvseries.html" >TV Series</a>
+            <a class="nav-item nav-link" style="margin-left: 20px; margin-right: 20px; font-weight: bold;" href="./movies.html" >Movies</a>
+            <a class="nav-item nav-link" style="margin-left: 20px; margin-right: 20px; font-weight: bold;" href="#">About</a>
+
+          </div>
+        </div>
+      </nav>
+
+
+    <div class="container-fluid" style="padding: 20px; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+        <!-- <div class="card" style="width: 18rem; margin: 15px">
+          <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/en/8/87/The_Imitation_Game_%282014%29.png" alt="Enigma">
+          <div class="card-body">
+            <h5 class="card-title">The Imitation Game</h5>
+            <p class="card-text">
+                <ul>
+                    <li>ID: </li>
+                    <li>Description: </li>
+                    <li>Category: </li>
+                </ul>
+            </p>
+            <a href="#" class="btn btn-primary">Subscribe</a>
+          </div>
+        </div> -->
+    </div>
+    <div id='card-container'></div>
+
+
+
+    <!-- Button trigger modal -->
+    
+    <button type="button" class="btn btn-primary webdesigntuts-workshop" data-toggle="modal" data-target="#exampleModalCenter" style="position: fixed; bottom: 50%; right: 0; animation: glow 800ms ease-out infinite alternate">
+        <img src="C:\Users\user\Desktop\shopping-cart.png" style="width: 15px; margin-bottom: 4px; margin-right: 4px;"> Your Cart
+    </button>
+  
+    <!-- Modal -->  
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title warning" id="exampleModalLongTitle">Your Subscription Cart</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <ul class="list-group list-group-flush" id="parentPurchase">
+            </ul>
+            <ul class="list-group list-group-flush" id="TotalContainer">
+                <li class="list-group-item">
+                    <p id="total"></p>
+                    <p></p>
+                </li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Go to Payment</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="catalog.js"></script>
+</body>
+</html>
+
